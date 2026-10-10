@@ -1563,9 +1563,9 @@ $rv_ct = $rv_ct_en ? array(
 	'chip'    => $T['fn_chip'],
 	'title'   => $T['fn_t'],
 	'lead'    => $T['fn_lead'],
-	'card'    => 'Get your project estimate',
+	'card'    => 'Get a landing page estimate',
 	'online'  => 'Budget & timeline',
-	'cardsub' => 'Tell us about your business and the task. We’ll estimate the project format, approximate budget and timeline.',
+	'cardsub' => 'Leave your name and phone number — we’ll call you back and estimate your landing page.',
 	'note'    => 'By sending the form you agree to our <a href="%s">privacy policy</a>.',
 	'privacy' => home_url( '/privacy-policy/' ),
 	'phoneL'  => 'Phone',
@@ -1580,9 +1580,9 @@ $rv_ct = $rv_ct_en ? array(
 	'chip'    => $T['fn_chip'],
 	'title'   => $T['fn_t'],
 	'lead'    => $T['fn_lead'],
-	'card'    => 'Отримайте оцінку проєкту',
+	'card'    => 'Отримайте оцінку лендінгу',
 	'online'  => 'Бюджет і строки',
-	'cardsub' => 'Розкажіть про ваш бізнес і задачу. Ми оцінимо формат проєкту, орієнтовний бюджет і строки.',
+	'cardsub' => 'Залиште ім’я та телефон — ми передзвонимо й оцінимо ваш лендінг.',
 	'note'    => 'Надсилаючи форму, ви погоджуєтеся з <a href="%s">політикою конфіденційності</a>.',
 	'privacy' => home_url( '/uk/privacy-policy/' ),
 	'phoneL'  => 'Телефон',
@@ -1642,7 +1642,7 @@ $rv_ct_icons = array(
 						<p class="rv-ct__online"><i></i><?php echo esc_html( $rv_ct['online'] ); ?></p>
 					</div>
 					<p class="rv-ct__card-sub"><?php echo esc_html( $rv_ct['cardsub'] ); ?></p>
-					<?php if ( function_exists( 'rv_lead_form' ) ) : ?>
+					<?php if ( false ) : /* на лендінгу — проста форма CF7: ім'я + телефон */ ?>
 					<?php /* квалифицирующая форма (inc/rv-lead.php): тип проекта, бюджет, задача */ ?>
 					<?php rv_lead_form( 'card' ); ?>
 					<?php else : /* запасной вариант, если модуль не подключён */ ?>
@@ -2061,7 +2061,8 @@ $rv_wd_ld = array(
 
       /* Попап с формой оценки (inc/rv-lead.php). Тариф → тип проекта,
          калькулятор → тип, бюджет и расчёт в поле «задача». */
-      if (window.RVLead){
+      /* на лендінгу попап з довгою формою вимкнено — кнопки ведуть до простої форми внизу */
+      if (false && window.RVLead){
         var o = { task: t };
         if (a.dataset.rvPlan) o.service = a.dataset.rvPlan;
         if (a.hasAttribute('data-calc-cta')){
