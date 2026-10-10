@@ -7896,6 +7896,39 @@ foreach ($rv_faq as $rv_f) {
 	</div>
 </div>
 <script type="application/ld+json"><?php echo wp_json_encode($rv_faq_ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
+<?php
+/* Розмітка компанії й послуг для Google та AI-асистентів (ChatGPT, Claude, Perplexity):
+   хто ми, де, як зв'язатися і які послуги з цінами «від» — дані беруться з блоку послуг вище. */
+$rv_org_offers = array();
+foreach ( $rv_svx as $rv_s ) {
+	$rv_org_offers[] = array(
+		'@type'         => 'Offer',
+		'itemOffered'   => array( '@type' => 'Service', 'name' => $rv_s['name'], 'description' => $rv_s['desc'], 'url' => $rv_s['url'] ? $rv_s['url'] : home_url( '/' ) ),
+		'priceSpecification' => array( '@type' => 'PriceSpecification', 'minPrice' => (int) preg_replace( '/\D/', '', $rv_s['price'] ), 'priceCurrency' => 'USD' ),
+	);
+}
+$rv_org_ld = array(
+	'@context'    => 'https://schema.org',
+	'@type'       => 'ProfessionalService',
+	'@id'         => home_url( '/#organization' ),
+	'name'        => 'Revive Agency',
+	'url'         => home_url( $rv_svx_en ? '/' : '/uk/' ),
+	'description' => $rv_svx_en
+		? 'Digital agency: website and online store development, mobile apps, UI/UX design, SEO, Google Ads, social media ads and chatbots. 12 years, 120+ brands, clients in 21 countries.'
+		: 'Діджитал-агенція: розробка сайтів та інтернет-магазинів, мобільні застосунки, UI/UX дизайн, SEO, Google Ads, таргетована реклама й чат-боти. 12 років, 120+ брендів, клієнти з 21 країни.',
+	'telephone'   => '+380678000830',
+	'areaServed'  => 'Worldwide',
+	'priceRange'  => '$$',
+	'address'     => array(
+		array( '@type' => 'PostalAddress', 'streetAddress' => $rv_svx_en ? 'Novopecherskyi Lane 5' : 'Новопечерський провулок, 5', 'addressLocality' => $rv_svx_en ? 'Kyiv' : 'Київ', 'addressCountry' => 'UA' ),
+		array( '@type' => 'PostalAddress', 'streetAddress' => '2030 Main Street', 'addressLocality' => 'Irvine', 'addressRegion' => 'CA', 'postalCode' => '92614', 'addressCountry' => 'US' ),
+	),
+	'sameAs'      => array( 'https://telegram.me/max8ua' ),
+	'hasOfferCatalog' => array( '@type' => 'OfferCatalog', 'name' => $rv_svx_en ? 'Services' : 'Послуги', 'itemListElement' => $rv_org_offers ),
+);
+if ( function_exists( 'get_site_icon_url' ) && get_site_icon_url() ) $rv_org_ld['logo'] = get_site_icon_url( 512 );
+?>
+<script type="application/ld+json"><?php echo wp_json_encode( $rv_org_ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ); ?></script>
 <script>
 (function(){
   var list = document.getElementById('rv-faq-list');

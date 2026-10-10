@@ -1,0 +1,19 @@
+# Дозволити AI-асистентам (ChatGPT, Claude, Perplexity, Gemini) читати сайт.
+# Додайте ці рядки у ваш robots.txt (Yoast → Інструменти → Редактор файлів), НЕ видаляючи наявні правила.
+
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Bingbot
+Allow: /
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://www.revive-agency.com/sitemap_index.xml
+Sitemap: https://www.revive-agency.com/rv-pages-sitemap.xml
