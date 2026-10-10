@@ -1193,29 +1193,32 @@ $rv_svx_meta = array(
 	'chatbots'  => array( 'price' => 500,  'icon' => 'bot',    'glow' => '#65DEFF', 'glow2' => '#176BA8', 'group' => 'scale' ),
 );
 
-/* Посилання з рядка послуги на її сторінку (UA / EN). EN-адресу беремо з перекладу
-   UA-сторінки в Polylang; якщо переклад не пов'язаний — запасний EN-слаг нижче. */
+/* Посилання з рядка послуги на її сторінку. Сторінку шукаємо за UA- або EN-слагом і беремо
+   її переклад поточної мови з Polylang — так посилання веде на правильну мову, навіть якщо
+   слаг інший. Якщо сторінку чи переклад не знайдено — запасна адреса за слагом. */
+$rv_svx_pages = array( // ключ => [UA-слаг, EN-слаг]
+	'webdev'    => array( 'rozrobka-sajtiv', 'web-development' ),
+	'ecommerce' => array( 'rozrobka-internet-magazinu-pid-klyuch', 'turnkey-online-store-development' ),
+	'mobileapp' => array( 'rozrobka-mobilnih-zastosunkiv', 'mobile-app-development' ),
+	'uiux'      => array( 'ui-ux-dizajn', 'ui-ux-design' ),
+	'seo'       => array( 'seo-prosuvannya', 'seo-services' ),
+	'gads'      => array( 'reklama-google-ads', 'google-ads-management' ),
+	'smm'       => array( 'targetovana-reklama', 'social-media-advertising' ),
+	'chatbots'  => array( 'rozrobka-chat-botiv', 'chatbot-development' ),
+);
+$rv_svx_lang = $rv_svx_en ? 'en' : 'uk';
 $rv_svx_urls = array();
-if ( $rv_svx_en ) {
-	$rv_shop_uk = get_page_by_path( 'rozrobka-internet-magazinu-pid-klyuch', OBJECT, 'page' );
-	$rv_shop_en = ( $rv_shop_uk && function_exists( 'pll_get_post' ) ) ? (int) pll_get_post( $rv_shop_uk->ID, 'en' ) : 0;
-	$rv_svx_urls['ecommerce'] = $rv_shop_en ? get_permalink( $rv_shop_en ) : home_url( '/turnkey-online-store-development/' );
-	$rv_svx_urls['webdev']    = home_url( '/web-development/' );
-	$rv_svx_urls['mobileapp'] = home_url( '/mobile-app-development/' );
-	$rv_svx_urls['uiux']     = home_url( '/ui-ux-design/' );
-	$rv_svx_urls['seo']      = home_url( '/seo-services/' );
-	$rv_svx_urls['gads']     = home_url( '/google-ads-management/' );
-	$rv_svx_urls['smm']      = home_url( '/social-media-advertising/' );
-	$rv_svx_urls['chatbots'] = home_url( '/chatbot-development/' );
-} else {
-	$rv_svx_urls['ecommerce'] = home_url( '/uk/rozrobka-internet-magazinu-pid-klyuch/' );
-	$rv_svx_urls['webdev']    = home_url( '/uk/rozrobka-sajtiv/' );
-	$rv_svx_urls['mobileapp'] = home_url( '/uk/rozrobka-mobilnih-zastosunkiv/' );
-	$rv_svx_urls['uiux']     = home_url( '/uk/ui-ux-dizajn/' );
-	$rv_svx_urls['seo']      = home_url( '/uk/seo-prosuvannya/' );
-	$rv_svx_urls['gads']     = home_url( '/uk/reklama-google-ads/' );
-	$rv_svx_urls['smm']      = home_url( '/uk/targetovana-reklama/' );
-	$rv_svx_urls['chatbots'] = home_url( '/uk/rozrobka-chat-botiv/' );
+foreach ( $rv_svx_pages as $rv_k => $rv_sl ) {
+	$rv_url = '';
+	if ( function_exists( 'pll_get_post' ) ) {
+		foreach ( $rv_sl as $rv_slug ) {
+			$rv_pg = get_page_by_path( $rv_slug, OBJECT, 'page' );
+			if ( ! $rv_pg || 'publish' !== $rv_pg->post_status ) continue;
+			$rv_tr = (int) pll_get_post( $rv_pg->ID, $rv_svx_lang );
+			if ( $rv_tr && 'publish' === get_post_status( $rv_tr ) ) { $rv_url = get_permalink( $rv_tr ); break; }
+		}
+	}
+	$rv_svx_urls[ $rv_k ] = $rv_url ? $rv_url : home_url( $rv_svx_en ? '/' . $rv_sl[1] . '/' : '/uk/' . $rv_sl[0] . '/' );
 }
 
 $rv_svx_text = $rv_svx_en ? array(
