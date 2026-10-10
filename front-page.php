@@ -1200,8 +1200,10 @@ if ( $rv_svx_en ) {
 	$rv_shop_uk = get_page_by_path( 'rozrobka-internet-magazinu-pid-klyuch', OBJECT, 'page' );
 	$rv_shop_en = ( $rv_shop_uk && function_exists( 'pll_get_post' ) ) ? (int) pll_get_post( $rv_shop_uk->ID, 'en' ) : 0;
 	$rv_svx_urls['ecommerce'] = $rv_shop_en ? get_permalink( $rv_shop_en ) : home_url( '/turnkey-online-store-development/' );
+	$rv_svx_urls['webdev']    = home_url( '/web-development/' );
 } else {
 	$rv_svx_urls['ecommerce'] = home_url( '/uk/rozrobka-internet-magazinu-pid-klyuch/' );
+	$rv_svx_urls['webdev']    = home_url( '/uk/rozrobka-sajtiv/' );
 }
 
 $rv_svx_text = $rv_svx_en ? array(
