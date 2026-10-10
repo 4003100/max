@@ -1291,7 +1291,7 @@ $rv_svx_first = $rv_svx[0];
 				$rv_idx = str_pad( $rv_i + 1, 2, '0', STR_PAD_LEFT );
 				$rv_on  = 0 === $rv_i;
 			?>
-			<li class="rv-svx__item<?php echo $rv_on ? ' is-active' : ''; ?>" style="--g:<?php echo esc_attr( $rv_s['glow'] ); ?>;--g2:<?php echo esc_attr( $rv_s['glow2'] ); ?>" data-i="<?php echo (int) $rv_i; ?>">
+			<li class="rv-svx__item<?php echo $rv_on ? ' is-active' : ''; ?><?php echo $rv_s['url'] ? ' has-url' : ''; ?>" style="--g:<?php echo esc_attr( $rv_s['glow'] ); ?>;--g2:<?php echo esc_attr( $rv_s['glow2'] ); ?>" data-i="<?php echo (int) $rv_i; ?>">
 				<button type="button" class="rv-svx__row" aria-expanded="false" aria-controls="rv-svx-d-<?php echo esc_attr( $rv_s['key'] ); ?>">
 					<span class="rv-svx__idx"><?php echo esc_html( $rv_idx ); ?></span>
 					<span class="rv-svx__name"><?php echo esc_html( $rv_s['name'] ); ?></span>
@@ -1514,6 +1514,7 @@ $rv_svx_first = $rv_svx[0];
   .rv-svx__arrow{width:34px;height:34px}
   .rv-svx__arrow svg{transition:transform .4s var(--ease)}
   .rv-svx__item.is-open .rv-svx__arrow svg{transform:rotate(135deg)}
+  .rv-svx__item.has-url .rv-svx__arrow svg,.rv-svx__item.has-url.is-open .rv-svx__arrow svg{transform:none}
   .rv-svx__row:hover .rv-svx__name,.rv-svx__item.is-active .rv-svx__name{transform:none}
   .rv-svx__item.is-open .rv-svx__detail{grid-template-rows:1fr}
   .rv-svx__detail-in{padding:0 10px 0 64px}
@@ -1538,6 +1539,9 @@ $rv_svx_first = $rv_svx[0];
   .rv-svx__title{font-size:clamp(28px,8.4vw,34px)}
   .rv-svx .rv-svx__row{grid-template-columns:28px minmax(0,1fr) auto;gap:10px}
   .rv-svx__arrow{display:none}
+  /* рядок із власною сторінкою: стрілка лишається і веде на сторінку */
+  .rv-svx .rv-svx__item.has-url .rv-svx__row{grid-template-columns:28px minmax(0,1fr) auto 30px}
+  .rv-svx__item.has-url .rv-svx__arrow{display:grid;width:30px;height:30px}
   .rv-svx__name{font-size:16.5px}
   .rv-svx__price{font-size:15px}
   .rv-svx__price small{display:block;margin:0 0 2px;text-align:right}
@@ -1635,7 +1639,9 @@ $rv_svx_first = $rv_svx[0];
 
   items.forEach(function(it, i){
     var btn = it.querySelector('.rv-svx__row');
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function(e){
+      /* телефон/планшет: стрілка рядка з власною сторінкою веде на неї */
+      if (!wide.matches && DATA[i].url && e.target.closest('.rv-svx__arrow')) { window.location.href = DATA[i].url; return; }
       /* десктоп: рядок уже виділено наведенням — клік веде на сторінку послуги, якщо вона є */
       if (wide.matches) { if (DATA[i].url) { window.location.href = DATA[i].url; return; } select(i, true); return; }
       /* телефон: аккордеон, открыта одна строка */
