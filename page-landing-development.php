@@ -1808,6 +1808,11 @@ section.s11#s11{--gold:#F5C542;--ease:cubic-bezier(.22,1,.36,1);
   .rv-ct__ch:active .rv-ct__ico svg{stroke:#030032}
 }
 @media(prefers-reduced-motion:reduce){.rv-ct__chip i,.rv-ct__online i{animation:none}}
+/* лендінг: блок із формою — в один екран, без другорядного тексту */
+#s11 .rv-ct .rv-ct__lead,#s11 .rv-ct .rv-ct__card-sub,#s11 .rv-ct .rv-ct__offices,#s11 .rv-ct .rv-ct__online{display:none!important}
+section.s11#s11{padding:clamp(40px,7vh,72px) 0!important}
+#s11 .rv-ct{align-items:center}
+@media(max-width:767px){section.s11#s11{padding:32px 0 40px!important}}
 </style>
 
 <script id="rv-ct-js">
