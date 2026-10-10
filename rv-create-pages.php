@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Revive — створення сторінок (одноразово)
- * Description: Створює сторінки інтернет-магазинів і лендінгу (UA + EN), шаблони, батьківські сторінки та зв'язки Polylang. Уже наявні сторінки пропускає.
+ * Description: Створює сторінки інтернет-магазинів, лендінгу та послуг (UA + EN), шаблони, батьківські сторінки та зв'язки Polylang. Уже наявні сторінки пропускає.
  *
  * Як запустити: покладіть файл у wp-content/mu-plugins/, увійдіть в адмінку як адміністратор
  * і відкрийте  /wp-admin/?rv_create_pages=1   Після запуску ВИДАЛІТЬ цей файл.
@@ -29,6 +29,12 @@ add_action( 'admin_init', function () {
 		array( 'tpl' => 'page-ecommerce-development.php', 'uk' => array( 'Розробка інтернет-магазину парфумерії', 'rozrobka-internet-magazinu-parfumeriyi', '' ), 'en' => array( 'Perfume online store development', 'perfume-online-store-development', '' ) ),
 		array( 'tpl' => 'page-ecommerce-development.php', 'uk' => array( 'Розробка інтернет-магазину ювелірних виробів', 'rozrobka-internet-magazinu-yuvelirnih-virobiv', '' ), 'en' => array( 'Jewellery online store development', 'jewellery-online-store-development', '' ) ),
 		array( 'tpl' => 'page-landing-development.php', 'uk' => array( 'Розробка лендінгу під ключ', 'rozrobka-lendingu', 'rozrobka-sajtiv' ), 'en' => array( 'Turnkey landing page development', 'landing-page-development', 'web-development' ) ),
+		array( 'tpl' => 'page-mobile-app-development.php', 'uk' => array( 'Розробка мобільних застосунків', 'rozrobka-mobilnih-zastosunkiv', '' ), 'en' => array( 'Mobile app development', 'mobile-app-development', '' ) ),
+		array( 'tpl' => 'page-ui-ux-design.php', 'uk' => array( 'UI/UX дизайн', 'ui-ux-dizajn', '' ), 'en' => array( 'UI/UX design', 'ui-ux-design', '' ) ),
+		array( 'tpl' => 'page-seo.php', 'uk' => array( 'SEO-просування сайту', 'seo-prosuvannya', '' ), 'en' => array( 'SEO services', 'seo-services', '' ) ),
+		array( 'tpl' => 'page-google-ads.php', 'uk' => array( 'Налаштування реклами Google Ads', 'reklama-google-ads', '' ), 'en' => array( 'Google Ads management', 'google-ads-management', '' ) ),
+		array( 'tpl' => 'page-social-ads.php', 'uk' => array( 'Таргетована реклама', 'targetovana-reklama', '' ), 'en' => array( 'Social media advertising', 'social-media-advertising', '' ) ),
+		array( 'tpl' => 'page-chatbots.php', 'uk' => array( 'Розробка чат-ботів і Telegram-ботів', 'rozrobka-chat-botiv', '' ), 'en' => array( 'Chatbot development', 'chatbot-development', '' ) ),
 	);
 
 	$find = function ( $slug, $parent_slug ) {

@@ -1190,7 +1190,7 @@ $rv_svx_meta = array(
 	'seo'       => array( 'price' => 500,  'icon' => 'seo',    'glow' => '#7AA8E8', 'glow2' => '#16345F', 'group' => 'grow'  ),
 	'gads'      => array( 'price' => 400,  'icon' => 'target', 'glow' => '#EFCE75', 'glow2' => '#8A5F0D', 'group' => 'grow'  ),
 	'smm'       => array( 'price' => 500,  'icon' => 'mega',   'glow' => '#B9A4F0', 'glow2' => '#3A2A6E', 'group' => 'grow'  ),
-	'chatbots'  => array( 'price' => 1500, 'icon' => 'bot',    'glow' => '#65DEFF', 'glow2' => '#176BA8', 'group' => 'scale' ),
+	'chatbots'  => array( 'price' => 500,  'icon' => 'bot',    'glow' => '#65DEFF', 'glow2' => '#176BA8', 'group' => 'scale' ),
 );
 
 /* Посилання з рядка послуги на її сторінку (UA / EN). EN-адресу беремо з перекладу
@@ -1201,9 +1201,21 @@ if ( $rv_svx_en ) {
 	$rv_shop_en = ( $rv_shop_uk && function_exists( 'pll_get_post' ) ) ? (int) pll_get_post( $rv_shop_uk->ID, 'en' ) : 0;
 	$rv_svx_urls['ecommerce'] = $rv_shop_en ? get_permalink( $rv_shop_en ) : home_url( '/turnkey-online-store-development/' );
 	$rv_svx_urls['webdev']    = home_url( '/web-development/' );
+	$rv_svx_urls['mobileapp'] = home_url( '/mobile-app-development/' );
+	$rv_svx_urls['uiux']     = home_url( '/ui-ux-design/' );
+	$rv_svx_urls['seo']      = home_url( '/seo-services/' );
+	$rv_svx_urls['gads']     = home_url( '/google-ads-management/' );
+	$rv_svx_urls['smm']      = home_url( '/social-media-advertising/' );
+	$rv_svx_urls['chatbots'] = home_url( '/chatbot-development/' );
 } else {
 	$rv_svx_urls['ecommerce'] = home_url( '/uk/rozrobka-internet-magazinu-pid-klyuch/' );
 	$rv_svx_urls['webdev']    = home_url( '/uk/rozrobka-sajtiv/' );
+	$rv_svx_urls['mobileapp'] = home_url( '/uk/rozrobka-mobilnih-zastosunkiv/' );
+	$rv_svx_urls['uiux']     = home_url( '/uk/ui-ux-dizajn/' );
+	$rv_svx_urls['seo']      = home_url( '/uk/seo-prosuvannya/' );
+	$rv_svx_urls['gads']     = home_url( '/uk/reklama-google-ads/' );
+	$rv_svx_urls['smm']      = home_url( '/uk/targetovana-reklama/' );
+	$rv_svx_urls['chatbots'] = home_url( '/uk/rozrobka-chat-botiv/' );
 }
 
 $rv_svx_text = $rv_svx_en ? array(

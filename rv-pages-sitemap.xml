@@ -204,4 +204,76 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/rozrobka-sajtiv/rozrobka-lendingu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/web-development/landing-page-development/"/>
   </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/rozrobka-mobilnih-zastosunkiv/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/rozrobka-mobilnih-zastosunkiv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/mobile-app-development/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/mobile-app-development/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/rozrobka-mobilnih-zastosunkiv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/mobile-app-development/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/ui-ux-dizajn/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/ui-ux-dizajn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/ui-ux-design/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/ui-ux-design/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/ui-ux-dizajn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/ui-ux-design/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/seo-prosuvannya/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/seo-prosuvannya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/seo-services/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/seo-services/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/seo-prosuvannya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/seo-services/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/reklama-google-ads/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/reklama-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/google-ads-management/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/google-ads-management/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/reklama-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/google-ads-management/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/targetovana-reklama/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/targetovana-reklama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/social-media-advertising/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/social-media-advertising/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/targetovana-reklama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/social-media-advertising/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/uk/rozrobka-chat-botiv/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/rozrobka-chat-botiv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/chatbot-development/"/>
+  </url>
+  <url>
+    <loc>https://www.revive-agency.com/chatbot-development/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://www.revive-agency.com/uk/rozrobka-chat-botiv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.revive-agency.com/chatbot-development/"/>
+  </url>
 </urlset>
