@@ -49,7 +49,7 @@ $T = $rv_en ? array(
 	'chip' => 'Landing page development',
 	'h1a' => 'Turnkey landing page development',
 	'h1b' => 'that turns clicks into enquiries',
-	'hero_result' => 'One page, one offer, one clear next step.',
+	'hero_result' => '',
 	'lead' => 'We design and build landing pages for services, products and ad campaigns — with a strong offer, fast loading and analytics in place from day one.',
 	'hero_price' => 'Landing pages from ' . $rv_m( 'start' ),
 	'hero_terms' => 'Scope and price agreed before we start',
@@ -136,7 +136,7 @@ $T = $rv_en ? array(
 	'chip' => 'Розробка лендінгів',
 	'h1a' => 'Розробка лендінгу під ключ,',
 	'h1b' => 'що перетворює кліки на заявки',
-	'hero_result' => 'Одна сторінка, одна пропозиція, один зрозумілий крок.',
+	'hero_result' => '',
 	'lead' => 'Створюємо лендінги для послуг, товарів і рекламних кампаній — з сильною пропозицією, швидким завантаженням і налаштованою аналітикою з першого дня.',
 	'hero_price' => 'Лендінги — від ' . $rv_m( 'start' ),
 	'hero_terms' => 'Обсяг робіт і ціну погоджуємо до старту',
@@ -881,7 +881,7 @@ main.rv-wd{display:block!important}
 		<div class="rv-wd-hero__copy">
 			<p class="rv-wd__chip"><?php echo esc_html( $T['chip'] ); ?></p>
 			<h1 id="rv-wd-h1"><?php echo esc_html( $T['h1a'] ); ?> <span><?php echo esc_html( $T['h1b'] ); ?></span></h1>
-			<p class="rv-wd-hero__result"><?php echo esc_html( $T['hero_result'] ); ?></p>
+			<?php if ( '' !== $T['hero_result'] ) : ?><p class="rv-wd-hero__result"><?php echo esc_html( $T['hero_result'] ); ?></p><?php endif; ?>
 			<p class="rv-wd-hero__lead"><?php echo esc_html( $T['lead'] ); ?></p>
 			<p class="rv-wd-hero__position"><strong><?php echo esc_html( $T['hero_price'] ); ?></strong><span><?php echo esc_html( $T['hero_terms'] ); ?></span></p>
 			<div class="rv-wd-hero__cta">
