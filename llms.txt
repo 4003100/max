@@ -1,6 +1,6 @@
-# Revive Agency
+﻿# Revive Agency
 > Digital agency from Ukraine (offices in Kyiv, Ukraine and Irvine, California, USA). 12 years in web development, 120+ brands, clients in 21 countries, 95% returning clients. We build websites, online stores, landing pages and mobile apps, and grow them with SEO, Google Ads, social media ads and chatbots. Prices are fixed in the contract; payment in two stages (50/50).
-Contact: +38 067 8000 830 · Telegram @max8ua (https://telegram.me/max8ua) · WhatsApp +380678000830. Languages: English, Ukrainian.
+Contact: +38 067 8000 830 | Telegram @max8ua (https://telegram.me/max8ua) | WhatsApp +380678000830. Languages: English, Ukrainian.
 
 ## Services (EN)
 - [Website development](https://www.revive-agency.com/web-development/): from $1 000 (business website), landing pages from $250
@@ -25,7 +25,7 @@ Contact: +38 067 8000 830 · Telegram @max8ua (https://telegram.me/max8ua) · Wh
 - [Pet Supplies online store development](https://www.revive-agency.com/pet-supplies-online-store-development/)
 - [Building Materials online store development](https://www.revive-agency.com/building-materials-online-store-development/)
 - [Sporting Goods online store development](https://www.revive-agency.com/sporting-goods-online-store-development/)
-- [Kids’ Products online store development](https://www.revive-agency.com/kids-products-online-store-development/)
+- [Kids' Products online store development](https://www.revive-agency.com/kids-products-online-store-development/)
 - [Medical Supplies online store development](https://www.revive-agency.com/medical-supplies-online-store-development/)
 - [Perfume online store development](https://www.revive-agency.com/perfume-online-store-development/)
 - [Jewellery online store development](https://www.revive-agency.com/jewellery-online-store-development/)
