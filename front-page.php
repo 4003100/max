@@ -1184,7 +1184,7 @@ $rv_svx_icons = array(
 /* Общие данные: цена, иконка, цвет свечения, направление (Build/Grow/Scale). */
 $rv_svx_meta = array(
 	'webdev'    => array( 'price' => 1500, 'icon' => 'code',   'glow' => '#F5C542', 'glow2' => '#7E5C0E', 'group' => 'build' ),
-	'ecommerce' => array( 'price' => 3000, 'icon' => 'store',  'glow' => '#52E0B9', 'glow2' => '#0B625D', 'group' => 'build' ),
+	'ecommerce' => array( 'price' => 2000, 'icon' => 'store',  'glow' => '#52E0B9', 'glow2' => '#0B625D', 'group' => 'build' ),
 	'mobileapp' => array( 'price' => 2500, 'icon' => 'mobile', 'glow' => '#A99AFF', 'glow2' => '#4534A2', 'group' => 'build' ),
 	'uiux'      => array( 'price' => 500,  'icon' => 'pen',    'glow' => '#DFE6F2', 'glow2' => '#4A5578', 'group' => 'build' ),
 	'seo'       => array( 'price' => 500,  'icon' => 'seo',    'glow' => '#7AA8E8', 'glow2' => '#16345F', 'group' => 'grow'  ),
@@ -7237,7 +7237,7 @@ measure();
   var CALIBR = .75;
   /* Магазины и приложения по нашей вилке выходили дороже рынка — им отдельный
      минус 20%. Стартовая цена услуги при этом не трогается: в блоке услуг и в
-     FAQ заявлено «від $3000» и «від $2500», и нижняя граница держится по ним. */
+     FAQ заявлено «від $2000» и «від $2500», и нижняя граница держится по ним. */
   var TYPEK = { shop:.64, app:.64 };   /* -20%, а затем ещё -20% */
   /* Та же калибровка для сроков: -20%. Ниже двух недель не опускаемся —
      столько занимает даже самый простой проект с согласованиями. */
@@ -7824,7 +7824,7 @@ paint(); restart();
 <?php
 $rv_fq_en = (function_exists('pll_current_language') && pll_current_language() == 'en');
 $rv_faq = $rv_fq_en ? array(
-  array('How much does a website cost?','Scope decides it: landing pages and corporate sites start at $1,500, online stores at $3,000, mobile apps at $2,500. We name the exact figure after the brief and break it down by stage — so the number does not move mid-project.'),
+  array('How much does a website cost?','Scope decides it: landing pages and corporate sites start at $1,500, online stores at $2,000, mobile apps at $2,500. We name the exact figure after the brief and break it down by stage — so the number does not move mid-project.'),
   array('How long does it take?','A landing page takes 2–3 weeks, a corporate site 3–5 weeks, an online store 5–7 weeks and up. Deadlines are fixed in the contract together with the stages.'),
   array('What do you need from me to start?','About an hour for the brief, plus access to your domain and analytics if the site already exists. After that — feedback at three checkpoints: prototype, design and the staging version.'),
   array('Who writes the texts and prepares the images?','We can take it on: copywriting, image selection and basic retouching. If the content is yours, we hand over a structure and examples so nothing gets lost along the way.'),
@@ -7832,7 +7832,7 @@ $rv_faq = $rv_fq_en ? array(
   array('What does support include after launch?','CMS and plugin updates, backups, uptime monitoring, small content edits and consulting. The scope is agreed monthly, so there are no surprises in the invoice.'),
   array('How does payment work — and do you work with clients abroad?','Usually two or three payments tied to stages: start, design, launch. We work under a contract; for clients in the EU and the US we issue invoices. We have offices in Kyiv and Irvine, California, and run projects in English and Ukrainian.'),
 ) : array(
-  array('Скільки коштує сайт?','Усе вирішує обсяг: лендинги та корпоративні сайти стартують від $1500, інтернет-магазини — від $3000, мобільні застосунки — від $2500. Точну цифру називаємо після брифу й розбиваємо по етапах, щоб вона не «пливла» вже в процесі.'),
+  array('Скільки коштує сайт?','Усе вирішує обсяг: лендинги та корпоративні сайти стартують від $1500, інтернет-магазини — від $2000, мобільні застосунки — від $2500. Точну цифру називаємо після брифу й розбиваємо по етапах, щоб вона не «пливла» вже в процесі.'),
   array('Скільки часу займає розробка?','Лендинг — 2–3 тижні, корпоративний сайт — 3–5 тижнів, інтернет-магазин — від 5–7 тижнів. Терміни фіксуємо в договорі разом з етапами.'),
   array('Що потрібно від мене на старті?','Приблизно година на бріф і доступи до домену та аналітики, якщо сайт уже існує. Далі — зворотний зв’язок на трьох контрольних точках: прототип, дизайн і тестова версія.'),
   array('Хто готує тексти та зображення?','Можемо взяти на себе: копірайтинг, добір зображень і базову обробку. Якщо контент ваш — передаємо структуру та приклади, щоб нічого не загубилось.'),
