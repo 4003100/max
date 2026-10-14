@@ -146,7 +146,7 @@ $head = function ( $n, $title, $sub ) {
       <?php woocommerce_checkout_payment(); ?>
       <div class="co-opts">
         <label class="co-check">
-          <input type="checkbox" name="no_call" value="1" checked>
+          <input type="checkbox" name="no_call" value="1"<?php checked( $checkout->get_value( 'no_call' ), '1' ); ?>>
           <span class="co-check__box" aria-hidden="true">✓</span>
           <span class="co-check__body"><span class="co-check__title"><?php echo pdp_t( '[:ua]Не дзвоніть мені[:ru]Не звоните мне' ); ?></span><span class="co-check__desc"><?php echo pdp_t( '[:ua]Перевірте, чи правильно прикріплені фото документів. Якщо знадобиться уточнення — напишемо у Viber.[:ru]Проверьте, правильно ли прикреплены фото документов. Если понадобится уточнение — напишем в Viber.' ); ?></span></span>
         </label>
