@@ -527,8 +527,7 @@ function render_pcmenu_mobile( $location = 'menu-2', $card_html = '' ) {
         <div class="mmenu__panel is-active" data-panel="main">
             <div class="mmenu__head">
                 <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri();  ?>/assets/logo-white2.png" width="148" height="33" alt="Спецзнак">
-                <button class="mmenu__icon mmenu__icon--border" type="button" aria-label="Пошук"><svg width="18" height="18"><use href="#i-search"/></svg></button>
-                <button class="mmenu__close" type="button" aria-label="Закрити меню" data-menu-close><svg width="18" height="18"><use href="#i-close"/></svg></button>
+                <button class="mmenu__close" type="button" aria-label="Закрити меню" data-menu-close><svg width="28" height="28"><use href="#i-close"/></svg></button>
             </div>
 
             <ul class="mmenu__list mmenu__list--upper">
@@ -566,7 +565,7 @@ function render_pcmenu_mobile( $location = 'menu-2', $card_html = '' ) {
                         ?>
                     </span>
                     <button class="mmenu__close" type="button" aria-label="Закрити меню" data-menu-close>
-                        <svg width="18" height="18"><use href="#i-close"/></svg>
+                        <svg width="28" height="28"><use href="#i-close"/></svg>
                     </button>
                 </div>
 
