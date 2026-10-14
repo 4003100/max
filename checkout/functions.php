@@ -1084,7 +1084,7 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $or
     $d     = $order->get_meta( '_co_delivery' );
     echo '<p><strong>Доставка:</strong> ' . esc_html( $names[ $d ] ?? $d ) . '</p>';
     if ( $order->get_meta( '_co_office' ) ) echo '<p><strong>Офіс:</strong> ' . esc_html( $order->get_meta( '_co_office' ) ) . '</p>';
-    echo '<p><strong>Не дзвонити:</strong> ' . ( $order->get_meta( '_co_no_call' ) === 'yes' ? 'так' : 'ні' ) . '</p>';
+    echo '<p><strong>Дзвінок клієнту:</strong> ' . esc_html( pdp_no_call_label( $order ) ) . '</p>';
 
     foreach ( pdp_doc_labels() as $k => $label ) {
         if ( $order->get_meta( "_doc_$k" ) ) {
@@ -1093,6 +1093,35 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $or
         }
     }
 } );
+
+/* ---------- «Не дзвоніть мені»: текст, колонка у списку замовлень, лист адміну ---------- */
+function pdp_no_call_label( $order ) {
+    $v = $order->get_meta( '_co_no_call' );
+    if ( $v === '' ) return '';
+    return $v === 'yes' ? '❌ Не дзвонити — писати у Viber' : '📞 Можна дзвонити';
+}
+
+$pdp_no_call_col = function ( $cols ) {
+    $cols['co_no_call'] = 'Дзвінок';
+    return $cols;
+};
+add_filter( 'manage_edit-shop_order_columns', $pdp_no_call_col );              // класичний список
+add_filter( 'manage_woocommerce_page_wc-orders_columns', $pdp_no_call_col );   // HPOS
+
+$pdp_no_call_cell = function ( $col, $order ) {
+    if ( $col !== 'co_no_call' ) return;
+    $order = is_a( $order, 'WC_Order' ) ? $order : wc_get_order( $order );
+    $v     = $order ? $order->get_meta( '_co_no_call' ) : '';
+    echo $v === 'yes' ? '❌ Не дзвонити' : ( $v === 'no' ? '📞 Дзвонити' : '—' );
+};
+add_action( 'manage_shop_order_posts_custom_column', $pdp_no_call_cell, 10, 2 );
+add_action( 'manage_woocommerce_page_wc-orders_custom_column', $pdp_no_call_cell, 10, 2 );
+
+add_filter( 'woocommerce_email_order_meta_fields', function ( $fields, $sent_to_admin, $order ) {
+    $label = pdp_no_call_label( $order );
+    if ( $sent_to_admin && $label ) $fields['co_no_call'] = [ 'label' => 'Дзвінок клієнту', 'value' => $label ];
+    return $fields;
+}, 10, 3 );
 
 add_action( 'admin_post_co_doc', function () {
     if ( ! current_user_can( 'manage_woocommerce' ) ) wp_die( '403', '', 403 );
