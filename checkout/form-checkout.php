@@ -105,21 +105,11 @@ $head = function ( $n, $title, $sub ) {
           <label class="co-opt<?php echo $id === 'pickup' ? ' co-opt--pickup' : ''; ?>"<?php echo $id === 'pickup' ? ' data-pickup-option' : ''; ?>>
             <input type="radio" name="delivery" value="<?php echo esc_attr( $id ); ?>" data-ship-text="<?php echo esc_attr( $ship ); ?>"<?php checked( $id, 'pickup' ); ?>>
             <span class="co-opt__radio" aria-hidden="true"></span>
-            <span class="co-opt__body"><span class="co-opt__title"><?php echo esc_html( $title ); ?></span><span class="co-opt__desc"><?php echo esc_html( $desc ); ?></span><?php if ( $id === 'pickup' && $selected_office ) : ?><span class="co-opt__office"><b><?php echo pdp_t( '[:ua]Офіс:[:ru]Офис:' ); ?></b> <span data-office-choice aria-live="polite"><?php echo esc_html( $selected_office ); ?></span></span><?php endif; ?></span>
+            <span class="co-opt__body"><span class="co-opt__title"><?php echo esc_html( $title ); ?></span><span class="co-opt__desc"><?php echo esc_html( $desc ); ?></span><?php if ( $id === 'pickup' && $selected_office ) : ?><span class="co-opt__office"><b><?php echo pdp_t( '[:ua]Офіс:[:ru]Офис:' ); ?></b> <span data-office-choice aria-live="polite"><?php echo esc_html( $selected_office ); ?></span><svg class="co-opt__office-arrow" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><?php endif; ?></span>
             <span class="co-opt__price"><?php echo esc_html( $price ); ?></span>
           </label>
-          <?php if ( $id === 'pickup' ) : ?>
-            <div class="co-office" data-office>
-              <span class="co-office__label"><?php echo pdp_t( '[:ua]Офіс[:ru]Офис' ); ?></span>
-              <label class="co-select">
-                <select name="office" aria-label="<?php echo esc_attr( pdp_t( '[:ua]Офіс[:ru]Офис' ) ); ?>">
-                  <?php foreach ( $offices as $o ) : ?><option<?php selected( $o, $selected_office ); ?>><?php echo esc_html( $o ); ?></option><?php endforeach; ?>
-                </select>
-                <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </label>
-            </div>
-          <?php endif; ?>
         <?php endforeach; ?>
+        <?php if ( $offices ) : ?><input type="hidden" name="office" value="<?php echo esc_attr( $selected_office ); ?>" data-office-input><?php endif; ?>
       </div>
       <div class="co-native-ship" data-native-ship>
   <?php
@@ -196,7 +186,7 @@ $head = function ( $n, $title, $sub ) {
   if (!form) return;
   var pickup = form.querySelector('[data-pickup-option]');
   var radio = pickup && pickup.querySelector('input[name="delivery"][value="pickup"]');
-  var select = form.querySelector('select[name="office"]');
+  var select = form.querySelector('[data-office-input]');
   var dialog = form.querySelector('[data-office-dialog]');
   var choice = pickup && pickup.querySelector('[data-office-choice]');
   if (!pickup || !radio || !select || !dialog) return;

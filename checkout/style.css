@@ -5019,7 +5019,7 @@ body .pdp-panel--reviews p.stars.selected a.active::before {
   .co-aside .co-sum, .co-aside .co-total, .co-aside .co-submit, .co-aside .co-terms, .co-aside .co-perks { margin-right: 4px; }
   .co-aside .co-submit { width: calc(100% - 4px); }
 }
-@media (max-width: 767px) { .co-card--3 .co-opt:first-child { min-height: 88px; } .co-card--3 .co-office + .co-opt { min-height: 90px; } }
+@media (max-width: 767px) { .co-card--3 .co-opt:first-child { min-height: 88px; } .co-card--3 .co-opt--pickup + .co-opt { min-height: 90px; } }
 
 .kz-item__old[hidden],
 .kz-item__badge[hidden],
@@ -6510,12 +6510,24 @@ body .comment-form-rating p.stars.selected a:hover ~ a::before { color: #d9dee6 
   overflow-wrap: anywhere;
 }
 .co-opt--pickup .co-opt__office b { font-weight: 700; }
+.co-opt--pickup .co-opt__office-arrow { display: inline-block; margin-left: 6px; vertical-align: middle; }
+@media (max-width: 767px) {
+  /* моб: офіс у картці — як поле вибору «У відділення» Нової Пошти */
+  .co-opt--pickup .co-opt__office {
+    position: relative; margin-top: 12px; padding: 12px 36px 12px 14px;
+    border: 1px solid #dfe7f1; border-radius: 14px; background: #fff;
+    color: #272727; font-size: 13px; line-height: 1.35;
+  }
+  .co-opt--pickup .co-opt__office b { color: #0252b1; }
+  .co-opt--pickup .co-opt__office-arrow { position: absolute; top: 50%; right: 14px; margin: -4px 0 0; color: #272727; }
+}
 .co-card--4 { scroll-margin-top: 16px; }
 html.co-office-dialog-open, html.co-office-dialog-open body { overflow: hidden; }
 .co-office-dialog {
     position: fixed; inset: 0; z-index: 20000;
     display: flex; align-items: center; justify-content: center; padding: 24px;
   }
+.co-office-dialog[hidden] { display: none !important; }
   .co-office-dialog__backdrop { position: absolute; inset: 0; background: rgba(13, 19, 28, .55); }
   .co-office-dialog__panel {
     position: relative; display: flex; flex-direction: column;
