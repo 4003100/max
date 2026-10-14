@@ -6565,3 +6565,7 @@ html.co-office-dialog-open, html.co-office-dialog-open body { overflow: hidden; 
   .co-office-dialog { align-items: flex-end; padding: 12px 12px max(12px, env(safe-area-inset-bottom)); }
   .co-office-dialog__panel { max-width: none; max-height: min(78dvh, 650px); }
 }
+
+/* Футер: логотип Revive Agency — ПК 95%, моб 85% від початкових 37px */
+.footer__dev { height: 35px; }
+@media (max-width: 767px) { .footer__dev { height: 31.5px; } }

@@ -59,7 +59,7 @@
     </nav>
     <div class="footer__bottom" style="filter: blur(0px); opacity: 1;">
       <p class="footer__copy">© 2008–<?php echo date('Y'); ?> ТОВ «Спецзнак». Всі права захищені.</p>
-      <img class="footer__dev" loading="lazy" decoding="async" src="<?php echo esc_url( content_url( '/uploads/2026/10/revive.png' ) ); ?>" alt="Revive Agency" height="37" style="display:block;width:auto;height:37px;filter:brightness(0) invert(1);opacity:.85">
+      <img class="footer__dev" loading="lazy" decoding="async" src="<?php echo esc_url( content_url( '/uploads/2026/10/revive.png' ) ); ?>" alt="Revive Agency" height="35" style="display:block;width:auto;filter:brightness(0) invert(1);opacity:.85">
       <ul class="payments" aria-label="Способи оплати">
         <li aria-label="Mastercard"><svg viewBox="0 0 40 24" width="40" height="24"><circle cx="15" cy="12" r="9" fill="#EB001B"/><circle cx="25" cy="12" r="9" fill="#F79E1B"/><path d="M20 4.6a9 9 0 0 1 0 14.8 9 9 0 0 1 0-14.8Z" fill="#FF5F00"/></svg></li>
         <li aria-label="Visa"><svg viewBox="0 0 48 16" width="44" height="15"><text x="24" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="900" font-style="italic" fill="#1A1F71">VISA</text></svg></li>
