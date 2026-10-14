@@ -169,7 +169,7 @@ $head = function ( $n, $title, $sub ) {
             value="<?php echo esc_attr( pdp_t( '[:ua]Оформити замовлення[:ru]Оформить заказ' ) ); ?>"
             data-value="<?php echo esc_attr( pdp_t( '[:ua]Оформити замовлення[:ru]Оформить заказ' ) ); ?>"><?php echo pdp_t( '[:ua]Оформити замовлення[:ru]Оформить заказ' ); ?></button>
 
-    <p class="co-terms"><?php echo pdp_t( '[:ua]Підтверджуючи замовлення, ви приймаєте <br><a href="#">умови угоди користувача</a>[:ru]Подтверждая заказ, вы принимаете <br><a href="#">условия пользовательского соглашения</a>' ); ?></p>
+    <p class="co-terms"><?php echo pdp_t( '[:ua]Підтверджуючи замовлення, ви приймаєте <br><a href="https://revive-agency.com/znak/polityka-konfidenczijnosti/" target="_blank" rel="noopener">умови угоди користувача</a>[:ru]Подтверждая заказ, вы принимаете <br><a href="https://revive-agency.com/znak/ru/polityka-konfidenczijnosti/" target="_blank" rel="noopener">условия пользовательского соглашения</a>' ); ?></p>
     <ul class="co-perks">
       <li><span aria-hidden="true">✓</span><?php echo pdp_t( '[:ua]Виготовлення за 15 хвилин після підтвердження[:ru]Изготовление за 15 минут после подтверждения' ); ?></li>
       <li><span aria-hidden="true">✓</span><?php echo pdp_t( '[:ua]Гарантія 2 роки на покриття та читабельність[:ru]Гарантия 2 года на покрытие и читаемость' ); ?></li>
