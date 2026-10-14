@@ -6511,6 +6511,13 @@ body .comment-form-rating p.stars.selected a:hover ~ a::before { color: #d9dee6 
 }
 .co-opt--pickup .co-opt__office b { font-weight: 700; }
 .co-opt--pickup .co-opt__office-arrow { display: inline-block; margin-left: 6px; vertical-align: middle; }
+/* ПК: до вибору — «Оберіть офіс / Выберите офис» замість адреси за замовчуванням */
+.co-opt--pickup .co-opt__office-placeholder { display: none; font-weight: 700; }
+@media (min-width: 768px) {
+  .co-opt--pickup .co-opt__office { cursor: pointer; }
+  .co-opt--pickup .co-opt__office.is-default .co-opt__office-placeholder { display: inline; }
+  .co-opt--pickup .co-opt__office.is-default .co-opt__office-value { display: none; }
+}
 @media (max-width: 767px) {
   /* моб: офіс у картці — як поле вибору «У відділення» Нової Пошти */
   .co-opt--pickup .co-opt__office {

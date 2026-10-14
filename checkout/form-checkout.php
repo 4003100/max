@@ -105,7 +105,7 @@ $head = function ( $n, $title, $sub ) {
           <label class="co-opt<?php echo $id === 'pickup' ? ' co-opt--pickup' : ''; ?>"<?php echo $id === 'pickup' ? ' data-pickup-option' : ''; ?>>
             <input type="radio" name="delivery" value="<?php echo esc_attr( $id ); ?>" data-ship-text="<?php echo esc_attr( $ship ); ?>"<?php checked( $id, 'pickup' ); ?>>
             <span class="co-opt__radio" aria-hidden="true"></span>
-            <span class="co-opt__body"><span class="co-opt__title"><?php echo esc_html( $title ); ?></span><span class="co-opt__desc"><?php echo esc_html( $desc ); ?></span><?php if ( $id === 'pickup' && $selected_office ) : ?><span class="co-opt__office"><b><?php echo pdp_t( '[:ua]Офіс:[:ru]Офис:' ); ?></b> <span data-office-choice aria-live="polite"><?php echo esc_html( $selected_office ); ?></span><svg class="co-opt__office-arrow" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><?php endif; ?></span>
+            <span class="co-opt__body"><span class="co-opt__title"><?php echo esc_html( $title ); ?></span><span class="co-opt__desc"><?php echo esc_html( $desc ); ?></span><?php if ( $id === 'pickup' && $selected_office ) : ?><span class="co-opt__office<?php echo $posted_office === $selected_office ? '' : ' is-default'; ?>" data-office-line><span class="co-opt__office-placeholder"><?php echo pdp_t( '[:ua]Оберіть офіс[:ru]Выберите офис' ); ?></span><span class="co-opt__office-value"><b><?php echo pdp_t( '[:ua]Офіс:[:ru]Офис:' ); ?></b> <span data-office-choice aria-live="polite"><?php echo esc_html( $selected_office ); ?></span></span><svg class="co-opt__office-arrow" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><?php endif; ?></span>
             <span class="co-opt__price"><?php echo esc_html( $price ); ?></span>
           </label>
         <?php endforeach; ?>
@@ -225,6 +225,8 @@ $head = function ( $n, $title, $sub ) {
     var option = event.target.closest('[data-office-value]');
     if (option) {
       select.value = option.dataset.officeValue;
+      var line = pickup.querySelector('[data-office-line]');
+      if (line) line.classList.remove('is-default');
       select.dispatchEvent(new Event('change', { bubbles: true }));
       sync();
       close(false);
